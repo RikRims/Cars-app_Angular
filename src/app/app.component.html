@@ -40,16 +40,20 @@
 <section class="car" id="cars" #cars>
   <div class="container">
     <h2 class="sub-title">Наш автопарк</h2>
+    <div class="car-toggle">
+      <div [ngClass]="{active: category === 'sport'}" (click)="toggleCategory('sport')">Sport</div>
+      <div [ngClass]="{active: category === 'luxury'}" (click)="toggleCategory('luxury')">Luxury</div>
+    </div>
     <div class="car-items">
       <div class="car-item" *ngFor="let car of carsData">
         <div class="car-item-img">
-          <img src="assets/img/{{car.image}}" alt="Images">
+          <img src="{{car.image}}" alt="Images">
         </div>
         <div class="car-item-title">{{car.name}}</div>
         <div class="car-item-info">
           <div class="car-item-point">
             <img src="assets/img/transmission.png" alt="Transmission">
-            <div>Коробка</div>
+            <div>Привод</div>
             <div>{{car.gear}}</div>
           </div>
           <div class="car-item-point">
@@ -59,7 +63,7 @@
           </div>
           <div class="car-item-point">
             <img src="assets/img/year.png" alt="Year">
-            <div>Год выпуска</div>
+            <div>Кол-во мест</div>
             <div>{{car.places}}</div>
           </div>
         </div>
@@ -89,7 +93,7 @@
 <footer class="footer">
   <div class="container">
     <div class="logo">
-      <img src="assets/img/logo.png" alt="Logo"/>
+      <img src="assets/img/logo-1.png" alt="Logo"/>
     </div>
     <div class="right">Все права защищены</div>
   </div>
